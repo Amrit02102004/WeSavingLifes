@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Bot</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Chat Bot App!! Find the next ASCII</h1>
+        <div id="chat-history">
+            <!-- Chat history will be displayed here -->
+        </div>
+        <form id="messageForm">
+            {% csrf_token %}
+            <label for="message">Enter the character </label>
+            <input type="text" id="message" name="message" required>
+            <button type="button" onclick="sendMessage()">Send</button>
+            <button type="button" onclick="clearChatHistory()">Clear History</button>
+        </form>
+        <p id="response"></p>
+        
+    </div>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
